@@ -107,6 +107,23 @@
         .price-box {
             min-height: 26.5rem;
         }
+        /*页面滚动出现缩放*/
+        
+        .scroll-fade-in {
+            --translate-y: -50;
+            --opacity: 0;
+            opacity: var(--opacity);
+            transform: matrix(1, 0, 0, 1, 0, var(--translate-y));
+            transition-duration: 0ms;
+        }
+        
+        .scroll-fade-in-img {
+            --translate-y: -50;
+            --opacity: 0;
+            --scale: 1;
+            opacity: var(--opacity);
+            transform: matrix(var(--scale), 0, 0, var(--scale), 0, var(--translate-y));
+        }
         /*tab栏*/
         
         .nav-tabs {
@@ -724,38 +741,110 @@
                 }, 300)
             })
         })
-        //鼠标滑动事件
+        //鼠标滑动事件出现黑色块
     var frame1 = document.querySelector("#frame-1")
     var frame2 = document.querySelector("#frame-2")
 
     frame1.onmouseenter = function() {
-        frame1.style.opacity = 0.2;
-        setTimeout(() => {
-            frame1.style.opacity = 1
-            frame1.src = "./img/Frame-1.png"
-        }, 600)
+
+        frame1.src = "./img/Frame-1.png"
+
     }
     frame1.onmouseleave = function() {
-        frame1.style.opacity = 0.2;
-        setTimeout(() => {
-            frame1.style.opacity = 1
-            frame1.src = "./img/Frame-11.png"
-        }, 600)
+
+        frame1.src = "./img/Frame-11.png"
+
     }
     frame2.onmouseenter = function() {
-        frame2.style.opacity = 0.2;
-        setTimeout(() => {
-            frame2.style.opacity = 1
-            frame2.src = "./img/Frame-2.png"
-        }, 600)
+
+        frame2.src = "./img/Frame-2.png"
+
     }
     frame2.onmouseleave = function() {
-        frame2.style.opacity = 0.2;
-        setTimeout(() => {
-            frame2.style.opacity = 1
+
+
             frame2.src = "./img/Frame-21.png"
-        }, 600)
-    }
+
+        }
+        //页面滚动出现缩放
+    $(function() {
+
+        var offsetHeight = $('.pdf-plan').offset().top;
+        $('.buy-action').on('click', function() {
+            $('body,html').animate({
+                scrollTop: offsetHeight
+            }, 300)
+        })
+    })
+
+    $(function() {
+
+
+        var offsetHeight = $('.pdf-plan').offset().top;
+        $('.buy-action').on('click', function() {
+            $('body,html').animate({
+                scrollTop: offsetHeight
+            }, 300)
+        })
+        var view_height = window.innerHeight || window.outerHeight
+        var scrollElement = document.scrollingElement || document.documentElement || document.body
+        var scroll_fade_in = document.querySelectorAll('.scroll-fade-in')
+        var scroll_fade_in_imgs = document.querySelectorAll('.scroll-fade-in-img')
+        var scrollRatio = 1 / 0.6
+        scrollFadeInit()
+
+        function scrollFadeInit() {
+            scroll_fade_in.length > 0 && scroll_fade_in[0].getBoundingClientRect().top <= view_height &&
+                scroll_fade_in.forEach(function(el) {
+                    el.getBoundingClientRect().top <= view_height && scrollFadeIn(el)
+                })
+
+            scroll_fade_in_imgs.length > 0 && scroll_fade_in_imgs[0].getBoundingClientRect().top <= view_height &&
+                scroll_fade_in_imgs.forEach(function(el) {
+                    el.getBoundingClientRect().top <= view_height && scrollFadeIn(el, 0, true)
+                })
+        }
+        //监听滚动元素队列
+        function scrollFadeIn(el, delta, isImg) {
+            requestAnimationFrame(function() {
+                delta = delta || 0
+                var rect = el.getBoundingClientRect()
+                var vh = view_height / (scrollRatio + delta * 0.1)
+                if (rect.top <= vh) {
+                    el.style.setProperty('--opacity', 1)
+                    el.style.setProperty('--translate-y', 0)
+                    return
+                }
+
+                var ratio = (rect.top - vh) / vh
+                ratio = ratio <= 1 ? ratio : 1
+                var multi = +el.getAttribute('data-multiple')
+                multi = multi || 1
+                el.style.setProperty('--opacity', (1 - 1 * ratio))
+                el.style.setProperty('--translate-y', 50 * ratio * multi)
+                isImg && el.style.setProperty('--scale', 1 - 0.2 * ratio)
+            })
+        }
+        loop(0, function(previousScrollTop, scrollTop) {
+            scrollFadeInit()
+        })
+
+        function loop(previousScrollTop, callback) {
+            function repeat() {
+                requestAnimationFrame(function() {
+                    loop(previousScrollTop, callback)
+                })
+            }
+            var scrollTop = scrollElement.scrollTop
+            if (previousScrollTop === scrollTop) {
+                return repeat()
+            } else {
+                callback && callback(previousScrollTop, scrollTop)
+                previousScrollTop = scrollTop
+            }
+            return repeat()
+        }
+    })
 </script>
 
 </html>
