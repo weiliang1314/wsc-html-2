@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pe功能专题页</title>
+    <link rel="stylesheet" href="https://neveragain.allstatics.com/2019/assets/style/bootstrap-pdfelement.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+    <style>
+        .btn-a {
+            border-bottom: 2px solid transparent;
+        }
+        
+        .btn-a:hover {
+            border-bottom: 2px solid #005BF7;
+        }
+        
+        .mx-64 {
+            margin: 0 4rem;
+        }
+        
+        .sys-a:hover {
+            color: #005BF7;
+            font-weight: bold;
+        }
+        
+        .toggle-icon {
+            width: 3.125rem;
+            height: 1.5rem;
+            background-color: #0049FF;
+            border-radius: .75rem;
+            cursor: pointer;
+        }
+        
+        .toggle-icon:before {
+            position: absolute;
+            top: .1875rem;
+            left: .25rem;
+            width: 1.125rem;
+            height: 1.125rem;
+            border-radius: .5625rem;
+            background-color: #fff;
+            content: '';
+            transition: left .2s linear;
+        }
+        
+        .toggle-icon.right:before {
+            left: 1.75rem;
+        }
+        
+        .price-act {
+            color: #005BF7;
+        }
+        
+        .go-enter {
+            text-decoration: underline;
+        }
+        
+        *[data-dev="auto"] .dev-mobile,
+        *[data-dev="desktop"] .dev-mobile,
+        *[data-dev="mobile"] .dev-desktop,
+        *[data-sys="auto"] .sys-mac,
+        *[data-sys="auto"] .sys-linux,
+        *[data-sys="auto"] .sys-ios,
+        *[data-sys="auto"] .sys-android,
+        *[data-sys="auto"] .sys-other,
+        *[data-sys="win"] .sys-mac,
+        *[data-sys="win"] .sys-linux,
+        *[data-sys="win"] .sys-ios,
+        *[data-sys="win"] .sys-android,
+        *[data-sys="win"] .sys-other,
+        *[data-sys="mac"] .sys-win,
+        *[data-sys="mac"] .sys-linux,
+        *[data-sys="mac"] .sys-ios,
+        *[data-sys="mac"] .sys-android,
+        *[data-sys="mac"] .sys-other,
+        *[data-sys="linux"] .sys-win,
+        *[data-sys="linux"] .sys-mac,
+        *[data-sys="linux"] .sys-ios,
+        *[data-sys="linux"] .sys-android,
+        *[data-sys="linux"] .sys-other,
+        *[data-sys="android"] .sys-ios,
+        *[data-sys="android"] .sys-win,
+        *[data-sys="android"] .sys-mac,
+        *[data-sys="android"] .sys-linux,
+        *[data-sys="android"] .sys-other,
+        *[data-sys="ios"] .sys-android,
+        *[data-sys="ios"] .sys-win,
+        *[data-sys="ios"] .sys-mac,
+        *[data-sys="ios"] .sys-linux,
+        *[data-sys="ios"] .sys-other,
+        *[data-sys="other"] .sys-win,
+        *[data-sys="other"] .sys-mac,
+        *[data-sys="other"] .sys-linux,
+        *[data-sys="other"] .sys-ios,
+        *[data-sys="other"] .sys-android,
+        *[data-tar="auto"] .tar-alt,
+        *[data-tar="nor"] .tar-alt,
+        *[data-tar="alt"] .tar-nor,
+        .parameter {
+            display: none !important;
+            margin: 0 !important;
+        }
+        
+        .price-box {
+            min-height: 26.5rem;
+        }
+        /*轮播图*/
+        
+        .swiper-pagination {
+            position: static !important;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background-color: #0049FF !important;
+        }
+        
+        .swiper-button-next,
+        .swiper-button-prev {
+            margin-top: -10rem !important;
+            width: 5.5rem;
+            height: 5.5rem;
+            background-size: 5.5rem 5.5rem;
+        }
+        
+        .swiper-button-prev {
+            left: 3.5rem !important;
+            background-image: url(./img/arrow-l.svg) !important;
+        }
+        
+        .swiper-button-next {
+            right: 3.5rem !important;
+            background-image: url(./img/arrow-r.svg) !important;
+        }
+        
+        @media (min-width:1900px) {
+            .pc-img {
+                width: 120%;
+            }
+        }
+        
+        @media (min-width:1280px) and (max-width:1450px) {
+            .btn-1 {
+                padding: .71875rem .5rem !important;
+            }
+            .display-3 {
+                font-size: 2rem;
+            }
+            .swiper-button-prev {
+                left: 0rem !important;
+            }
+            .swiper-button-next {
+                right: 0rem !important;
+            }
+            .pc-img {
+                margin-top: 6.25rem;
+            }
+        }
+        
+        @media (max-width:1024px) {
+            .frame-img {
+                width: 80%;
+            }
+            .display-4 {
+                font-size: 1.8rem;
+            }
+            .display-3 {
+                font-size: 2rem;
+            }
+            .protect-img {
+                width: 80%;
+            }
+            .swiper-button-prev {
+                left: 0rem !important;
+            }
+            .swiper-button-next {
+                right: 0rem !important;
+            }
+            .pc-img {
+                margin-top: 8.75rem;
+            }
+        }
+        
+        @media (max-width:769px) {
+            .price-box {
+                min-height: auto;
+            }
+            .protect-img {
+                width: 80%;
+            }
+            .pc-img {
+                margin-top: 9.25rem;
+            }
+            .display-3 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width:380px) {
+            .display-3 {
+                font-size: 1.7rem;
+            }
+            .mx-64 {
+                margin: 0 0.5rem;
+            }
+            .swiper-button-next,
+            .swiper-button-prev {
+                background-image: none !important;
+            }
+            .pc-img {
+                margin-top: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <main class="wsc-main px-0" style="overflow: visible;">
+        <section class="" style="font-family: DM Sans; color: #000000;">
+            <div class="container">
+                <div class="row justify-content-start">
+                    <div class="col-xxl-5 order-md-0 order-1  col-md-6 mt-md-5 pt-5">
+                        <div class="pt-3  text-center text-md-left pdfelement-left">
+                            <div class="font-size-super font-weight-bold text-action  pb-3" style="font-family: Messina sans-serif;">Wondershare <span> PDFelement</span></div>
+                            <h1 class="font-weight-bold pb-md-4 pb-2 display-3 pdfelement-title" style="">Protect PDF To<br class="d-xxl-block d-none"> Drive Your Business</h1>
+                            <p class="font-weight-normal font-size-huge pe-tips" style="line-height: 26px;">Prevent others from viewing, copying, editing, or<br class="d-xxl-block d-none"> printing your PDF content to keep sensitive data <br class="d-xxl-block d-none">confidential.</p>
+                            <div class="pt-md-4 pt-2 pb-2 text-secondary">
+                                <div data-toggle="youtube" class="d-flex align-items-center justify-content-center  justify-content-md-start" data-type="modal" data-youtube="5MUNwkfKfqQ"><img src="./img/video.svg" alt="" class="img-fluid mr-2"><span class="font-size-large">Watch the Video</span></div>
+                            </div>
+                            <div class="d-flex pt-3 pt-xxl-4 justify-content-center justify-content-md-start">
+                                <!-- window平台 -->
+                                <a href="#" class="btn  px-4 py-3 btn-lg btn-action sys-win m-0 mr-xl-3 mr-2 mb-xl-0">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="wsc-icon" data-icon="brand-windows"></i>
+                                        <div class="ml-2">TRY IT FREE</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="btn btn-lg btn-outline-action sys-win m-0 py-3 px-lg-5 px-4 buy-action">BUY NOW</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-7 order-md-1 order-0 col-md-6">
+                        <div class="dev-mobile pdfelement-banner ">
+                            <img src="./img/pc-1.png" alt="" class=" pc-img " width="100%">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center mt-md-5 pt-5">
+                    <div class="col-4 text-center pb-4 btn-a" style="">
+                        <a href="#pass" class="font-size-large font-weight-normal" style="text-decoration: none;color: #000000;">Password Encryption</a>
+
+                    </div>
+                    <div class="col-4 text-center pb-4 btn-a">
+                        <a href="#redac" class="font-size-large font-weight-normal " style="text-decoration: none;color: #000000;">Mark for Redaction</a>
+                    </div>
+                    <div class="col-4 text-center pb-4 btn-a">
+                        <a href="#sign" class="font-size-large font-weight-normal" style="text-decoration: none;color: #000000;">eSignature</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mx-64 mt-5 pb-5 pt-5 pt-md-0" style="background-color: rgba(0, 73, 255, 0.1);border-radius: 16px;font-family: DM Sans; color: #000000;">
+            <div class="container mb-md-5">
+                <div class="row d-flex justify-content-between pt-md-5">
+                    <div class="col-md-4 pt-3 text-center text-md-left">
+                        <h2 class="display-3 font-weight-bold pl-4" style="font-family: Greenwich;" id="pass">Password<br class="d-xl-block d-none"> Protect a PDF</h2>
+                    </div>
+                    <div class="col-md-7 text-md-left text-center pt-2">
+
+                        <p class="font-size-large" style="line-height: 26px;">You can limit access to a PDF by setting passwords and by restricting certain features, such as printing and editing. However, you cannot prevent saving copies of a PDF. The copies have the same restrictions as the original PDF.
+                        </p>
+                        <a href="#" style="color: #0049FF;" class="font-weight-bold font-size-large">Learn more >> 
+                            </a>
+
+                    </div>
+                </div>
+                <div class="swiper-container swiper-container-horizontal mt-md-5 pt-5">
+                    <div class="swiper-wrapper text-center" style="transform: translate3d(-1950px, 0px, 0px); transition-duration: 0ms;">
+                        <div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="1" style=""><img src="./img/protect.png" alt="" class="protect-img"></div>
+                        <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style=""><img src="./img/protect.png" alt="" class="protect-img"></div>
+                        <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1" style=""><img src="./img/protect.png" alt="" class="protect-img"></div>
+
+
+                        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style=""><img src="./img/protect.png" alt="" class="protect-img"></div>
+                    </div>
+                    <div class="text-center mt-md-5">
+                        <h3 class="font-size-super font-weight-bold pb-2 pt-3 pt-md-0">Add Open Password</h3>
+                        <p class="font-size-large" style="line-height: 24px;">ou can add Open Password to restrict unauthorized to protect your file, especially for file sharing<br class="d-xl-block d-none"> or archiving. People who enter the correct password can access the file or folder. You can also
+                            <br class="d-xl-block d-none"> unlock PDF password, just
+                            <strong>remove the password.</strong></p>
+                        <!--   <div style="color:#0049FF;" 
+                        class="d-flex font-size-large font-weight-bold justify-content-center pt-2 pb-5"><a href="#" style="color:
+                         #0049FF;">Try Now</a><span class="px-4">|</span><a href="#" style="color: #0049FF;">Learn How</a></div> -->
+                        <div class="sys-win pt-2 pb-3 pb-md-5 font-size-large font-weight-bold" style="color: #0049FF;"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_10" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
+                                ga360location="content_1_buttonLink_11">Learn How</a>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
+                        <span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+        <section class="mx-64 mt-5" style="background: linear-gradient(0deg, rgba(0, 109, 255, 0.15) 0%, rgba(255, 231, 130, 0.0645) 104.95%);  border-radius: 16px;color: #000000;">
+            <div class="container-clumn px-md-5 px-0 freedom-box mt-4">
+                <div class="pdf-freedom border-radius mx-2  py-5">
+                    <div class="freedom-conent py-0 py-lg-5">
+                        <div class="row justify-content-center px-3 px-lg-0">
+                            <div class="col-md-5 text-center text-md-left">
+                                <h3 class="display-3 font-weight-bold pdfelement-name" id="redac">Redact<br class="d-lg-block d-none"> PDF to Protect</h3>
+                            </div>
+                            <div class="col-xl-5 col-md-7 px-md-4 px-3 text-md-left text-center">
+                                <p class="font-size-large font-weight-normal mb-3 px-lg-4 px-0">
+                                    Before you share a PDF, you probably want to examine the document for sensitive content or private information that can trace the document to you. Use the Redact tools to remove or redact sensitive images and text or entire pages that are visible in a
+                                    PDF.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-center pt-md-5 pt-0 mt-4 ">
+                            <div class=" col-md-5 pt-5 pt-md-0">
+                                <div class="freedom-rowBox">
+                                    <img src="./img/Frame-11.png" alt="" class="img-fluid " id="frame-1">
+                                    <div class="mt-md-5 text-center text-md-left mt-3">
+                                        <div class="display-4 font-weight-bold mt-md-4 mt-0 pdfelement-name">Redact Text</div>
+                                        <p class="font-size-large mt-3 width-per pb-md-3 pb-0">
+                                            Protect your sensitive information or private information<br class="d-xxl-block d-none"> such as Financial account numbers, ID Card numbers,<br class="d-xxl-block d-none">Home addresses or Private Phone Numbers
+                                            that can trace<br class="d-xxl-block d-none"> the document to you when you share PDFs.</p>
+                                        <!-- pc端 -->
+                                        <div class="pt-md-3 pt-3 text-action font-weight-bold dev-desktop text-md-left text-center">
+                                            <!-- window -->
+                                            <div class="sys-win"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_10" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
+                                                    ga360location="content_1_buttonLink_11">Learn How</a>
+                                            </div>
+                                            <!-- mac -->
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-md-5 pl-md-5 ml-md-5 mt-md-0  mt-5 pt-5 pt-md-0">
+                                <div class="freedom-rowBox">
+                                    <img src="./img/Frame-21.png" alt="" class="img-fluid" id="frame-2">
+                                </div>
+                                <div class=" mt-md-5 mt-3 text-center text-md-left">
+                                    <div class="display-4 font-weight-bold mt-md-4 mt-0 pdfelement-name">Redact Image</div>
+                                    <p class="font-size-large mt-3 width-per pb-md-3 pb-0">Black out personal and sensitive information on pdf <br class="d-xxl-block d-none">like images, graphics, pictures on your trade report, <br class="d-xxl-block d-none">ressume before publish in media.</p>
+                                    <!-- pc端 -->
+                                    <div class=" pt-3 text-action font-weight-bold dev-desktop ">
+                                        <!-- window -->
+                                        <div class="sys-win"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_18" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
+                                                ga360location="content_1_buttonLink_19">Learn How</a>
+                                        </div>
+                                        <!-- mac -->
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-content-center pt-md-5 pt-0 mt-md-4 mt-5">
+                            <div class=" col-md-5 pt-5 pt-md-0">
+                                <div class="freedom-rowBox">
+                                    <img src="./img/Frame-3.png" alt="" class="img-fluid">
+                                    <div class="mt-md-5 mt-3 text-center text-md-left">
+                                        <div class="display-4 font-weight-bold mt-md-4 mt-0 pdfelement-name">Black out Entire Page(s)</div>
+                                        <p class="font-size-large mt-3 width-per pb-md-3 pb-0">
+                                            You may also want to redact or remove entire<br class="d-xxl-block d-none"> pages that show the product purchase price,<br class="d-xxl-block d-none"> loan history of your company.</p>
+                                        <!-- pc端 -->
+                                        <div class="pt-md-3 pt-3 text-action font-weight-bold dev-desktop">
+                                            <!-- window -->
+                                            <div class="sys-win"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_10" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
+                                                    ga360location="content_1_buttonLink_11">Learn How</a>
+                                            </div>
+                                            <!-- mac -->
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 pl-md-5 ml-md-5 mt-md-0 mt-5 pt-5 pt-md-0">
+                                <div class="freedom-rowBox">
+                                    <img src="./img/Frame-4.png" alt="" class="img-fluid">
+                                </div>
+                                <div class=" mt-md-5 text-md-left text-center">
+                                    <div class="display-4 font-weight-bold mt-md-4 mt-0 pdfelement-name">Create Multiple<br class="d-md-block d-none"> Redactions with Search</div>
+                                    <p class="font-size-large mt-3 width-per pb-md-3 pb-0">Use the Search & Redact tool to find and mark<br class="d-xxl-block d-none"> all words for redaction. The search tool doesn’t <br class="d-xxl-block d-none">search secured (encrypted) PDFs.</p>
+                                    <!-- pc端 -->
+                                    <div class=" pt-3 text-action font-weight-bold dev-desktop">
+                                        <!-- window -->
+                                        <div class="sys-win"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_18" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
+                                                ga360location="content_1_buttonLink_19">Learn How</a>
+                                        </div>
+                                        <!-- mac -->
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="" style="color: #000000;">
+            <div class="mx-2 py-xl-3 py-xl-5 pb-md-4 pb-0 py-md-0 py-5" style="">
+                <div class="container py-0 py-md-5 px-xl-0 px-md-3">
+                    <div class="row scroll-fade-in justify-content-between pb-3 px-3 px-lg-0" style="--opacity:1; --translate-y:0;">
+                        <div class="col-xl-5  col-md-6 pl-md-5 text-md-left text-center">
+                            <h2 class="font-weight-bold display-3 pdfelement-name" id="sign">Sign to<br> Protect a PDF.</h2>
+                        </div>
+                        <div class=" col-md-6 px-md-5 px-3 mt-md-0 mt-3 text-md-left text-center">
+                            <p class="font-size-large font-weight-normal mb-3 px-lg-4 px-0">Add digital signatures and timestamps to documents and allow the PDF receiver to validate the status of a digital signature to determine if the document has been modified since the signature was applied.</p>
+
+                        </div>
+                    </div>
+                    <div class="row scroll-fade-in px-md-0 px-3 justify-content-between mt-lg-5 mt-md-3   pt-md-5 pt-2" style="--opacity:1; --translate-y:0;">
+                        <div class=" col-md-6 d-flex align-items-center text-center">
+                            <!-- window端 -->
+                            <img src="./img/Frame-5.png" class="scroll-fade-in-img img-fluid " alt="" style="--opacity:1; --translate-y:0; --scale:0.991645;">
+                        </div>
+                        <div class="col-xl-5 col-md-6 mt-4 mt-md-0">
+                            <div class="ml-md-5 h-100 w-100" style="display:table;vertical-align:middle">
+                                <div style="display:table-cell;vertical-align:middle" class="text-center text-md-left">
+                                    <h2 class="font-weight-bold display-4  mt-md-4 mt-0 pdfelement-name">Encrypt PDF<br> with Digital Signature</h2>
+                                    <p class="font-size-large mt-3 width-per pb-xxl-3 pb-0  mb-lg-3 mb-0 pr-md-4" style="line-height: 26px;">
+
+                                        You can opt for a higher level of protection with <br class="d-xxl-block d-none">certificate security, which encrypts your PDF and<br class="d-xxl-block d-none"> authorizes access based on each user’s digital ID.
+                                        <br class="d-xxl-block d-none"> Sign the document and protect it.
+
+                                    </p>
+                                    <!-- pc端 -->
+                                    <div class="pt-md-3 pt-3 text-action font-weight-bold dev-desktop">
+                                        <!-- window -->
+                                        <div class="sys-win"><a href="#" class="font-size-large text-action pr-3" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="https://pdf.wondershare.com/how-to/edit-pdf-text.html" class="font-size-large text-action pl-3">Learn How</a></div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row scroll-fade-in px-md-0 px-3 justify-content-between  mt-md-3   pt-2" style="--opacity:0.592419; --translate-y:20.3791;">
+                        <div class="col-xl-5 order-md-0 order-1 col-md-6 pl-md-5 mt-4 mt-md-0">
+                            <!-- style="display:table;vertical-align:middle" -->
+                            <div class="h-100 ml-2 w-100" style="display:table;vertical-align:middle">
+                                <!-- style="display:table-cell;vertical-align:middle" -->
+                                <div style="display:table-cell;vertical-align:middle" class="text-center text-md-left">
+                                    <h2 class="font-weight-bold  mt-0 pdfelement-name">Sign PDF with<br> Electronic Signatures</h2>
+                                    <p class="font-size-large mt-3 width-per pb-xxl-3 pb-0  mb-lg-3 mb-0 " style="line-height: 26px;">
+                                        Fill your form and send a document to others<br class="d-xxl-block d-none"> for electronic signature collection safely with<br class="d-xxl-block d-none"> real-time status tracking.(Only for Cloud)
+
+                                    </p>
+                                    <!-- pc端 -->
+                                    <div class="pt-md-3 pt-3 text-action font-weight-bold dev-desktop ">
+                                        <!-- window -->
+                                        <div class="sys-win"><a href="#" class="font-size-large text-action pr-3" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="https://pdf.wondershare.com/how-to/edit-pdf-image.html" class="font-size-large text-action pl-3">Learn How</a></div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" order-md-1 order-0 col-md-6 d-flex align-items-center text-left">
+                            <!-- windows -->
+                            <img src="./img/Frame-6.png" class="scroll-fade-in-img sys-win img-fluid" alt="" style="--opacity:0.405688; --translate-y:29.7156; --scale:0.881138;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mx-64" style="background-color: rgba(255, 225, 76, 0.3);border-radius: 16px;color: #000000;">
+            <div class="container-column px-xl-5 px-md-4 px-2 ">
+                <div class="pdf-feat border-radius mx-2 py-3 py-5 ">
+                    <h4 class="display-3 text-center font-weight-bold pt-md-5 px-md-0 px-1 pt-0 pdfelement-title">other features you may like</h4>
+                    <div class="container my-lg-5 my-0">
+                        <div class="row">
+                            <div class="col-6 col-md text-center pt-md-5 pt-4">
+                                <div class="h-img"><img src="./img/icon-1.png" alt="" class="img-fluid"></div>
+                                <!-- pc端 -->
+                                <div class="feat-link dev-desktop mt-md-5 pt-3">
+                                    <!-- Windows -->
+                                    <a href="#" class="font-size-large sys-a">Edit PDFs</a>
+
+                                </div>
+
+                            </div>
+                            <div class="col-6 col-md text-center pt-md-5 pt-4">
+                                <div class="h-img"><img src="./img/icon-2.png" alt="" class="img-fluid"></div>
+                                <!-- pc端 -->
+                                <div class="feat-link dev-desktop mt-md-5 pt-3">
+                                    <!-- Windows -->
+                                    <a href="#" class="font-size-large sys-a">Annotate PDFs</a>
+
+                                </div>
+
+                            </div>
+                            <div class="col-6 col-md text-center pt-md-5 pt-4">
+                                <div class="h-img"><img src="./img/icon-3.png" alt="" class="img-fluid"></div>
+                                <!-- pc端 -->
+                                <div class="feat-link dev-desktop mt-md-5 pt-3">
+                                    <!-- Windows -->
+                                    <a href="#" class="font-size-large sys-a">Convert PDFs</a>
+
+                                </div>
+
+                            </div>
+                            <div class="col-6 col-md text-center pt-md-5 pt-4">
+                                <div class="h-img"><img src="./img/icon-4.png" alt="" class="img-fluid"></div>
+                                <!-- pc端 -->
+                                <div class="feat-link dev-desktop mt-md-5 pt-3">
+                                    <!-- Windows -->
+                                    <a href="#" class="font-size-large sys-a">sign</a>
+
+                                </div>
+
+                            </div>
+                            <div class="col-6 col-md text-center pt-md-5 pt-4">
+                                <div class="h-img"><img src="./img/icon-5.png" alt="ocr" class="img-fluid"></div>
+                                <!-- pc端 -->
+                                <div class="feat-link dev-desktop mt-md-5 pt-3">
+                                    <!-- Windows -->
+                                    <a href="#" class="font-size-large sys-a">OCR</a>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section style="color: #000000;">
+
+            <div class="container mt-md-5">
+                <div class="pdf-plan py-lg-5 pt-3">
+                    <h4 class="display-3 text-center font-weight-bold pdfelement-title pt-5 pt-md-0">Choose the PDFelement plan that works for you.</h4>
+                    <div class="row mt-lg-5">
+                        <div class="col-xl-4 col-md-6 pt-3">
+                            <div class=" px-lg-5 px-3" style="border: 1px solid #DFDFDF; border-radius: 10px;">
+                                <div class="price-box py-lg-5 py-3">
+                                    <div class="font-size-super font-weight-bold">PDFelement for Desktop</div>
+                                    <p class="font-size-normal py-lg-3 py-2 my-0">The easiest way to create, edit, convert, and sign PDF documents.</p>
+                                    <div class="py-2 d-flex align-items-center">
+                                        <span class="d-inline-blcok font-size-small price-act">Annually</span>
+                                        <span class="d-inline-block mx-3 toggle-icon position-relative"></span>
+                                        <span class="d-inline-blcok font-size-small">One-Time Price</span>
+                                    </div>
+                                    <!-- Annually -->
+                                    <div class="pt-4 annually">
+                                        <div><span class="font-size-super font-weight-bold">$79.99</span><span class="font-size-small ml-2" style="text-decoration: line-through;">$129</span></div>
+                                        <!-- pc端 -->
+                                        <div class="dev-desktop py-3">
+                                            <!-- window平台 -->
+                                            <a href="#" class="btn btn-action btn-1 sys-win m-0 mr-xl-3 mb-xl-0" ga360location="content_1_buttonLink_110" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <i class="wsc-icon wsc-icon-loaded" data-icon="brand-windows"><svg class="wsc-svg-brand-windows" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0 6.61071L19.6714 3.9V22.9071H0V6.61071ZM0 41.3893L19.6714 44.1V25.3286H0V41.3893V41.3893ZM21.8357 44.3893L48 48V25.3286H21.8357V44.3893V44.3893ZM21.8357 3.61071V22.9071H48V0L21.8357 3.61071V3.61071Z" fill="currentColor"></path>
+                                                            </svg>
+                                                          </i>
+                                                    <div class="ml-2">TRY IT FREE</div>
+                                                </div>
+                                            </a>
+                                            <a href="" class="btn btn-outline-action sys-win m-0" ga360location="content_1_buttonLink_111">BUY NOW</a>
+
+
+                                        </div>
+
+
+                                        <!-- pc端 -->
+                                        <div class="pt-1 dev-desktop">
+                                            <!-- win -->
+                                            <a href="javascript:;" class="font-size-small go-enter sys-win" data-platform="mac" data-toggle="platform">Switch to Mac &gt;&gt;</a>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!--one Time Price -->
+                                    <div class="pt-4 timeprice" style="display: none;">
+                                        <div><span class="font-size-super font-weight-bold">$129.99</span><span class="font-size-small ml-2" style="text-decoration: line-through;">$159</span></div>
+                                        <!-- pc端 -->
+                                        <div class="dev-desktop py-3">
+                                            <!-- window平台 -->
+                                            <a href="#" class="btn btn-1 btn-action sys-win m-0 mr-xl-3 mb-xl-0" ga360location="content_1_buttonLink_122" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <i class="wsc-icon wsc-icon-loaded" data-icon="brand-windows"><svg class="wsc-svg-brand-windows" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0 6.61071L19.6714 3.9V22.9071H0V6.61071ZM0 41.3893L19.6714 44.1V25.3286H0V41.3893V41.3893ZM21.8357 44.3893L48 48V25.3286H21.8357V44.3893V44.3893ZM21.8357 3.61071V22.9071H48V0L21.8357 3.61071V3.61071Z" fill="currentColor"></path>
+                                                    </svg>
+                                                        </i>
+                                                    <div class="ml-2">TRY IT FREE</div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="btn btn-outline-action sys-win m-0" ga360location="content_1_buttonLink_123">BUY NOW</a>
+                                            <!-- mac平台 -->
+
+                                        </div>
+                                        <!-- 移动端 -->
+
+                                        <!-- pc端 -->
+                                        <div class="pt-1 dev-desktop">
+                                            <!-- win -->
+                                            <a href="javascript:;" class="font-size-small go-enter sys-win" data-platform="mac" data-toggle="platform">switch to mac &gt;&gt;</a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-md-6 pt-3">
+                            <div class=" px-lg-5 px-3" style="border: 1px solid #DFDFDF; border-radius: 10px;">
+                                <div class="price-box py-lg-5 py-3">
+                                    <div class="font-size-super font-weight-bold">PDFelement for iOS</div>
+                                    <p class="font-size-normal py-lg-3 py-2 my-0">The easiest way to create, edit, convert, and sign PDF documents.</p>
+                                    <div class="py-2 d-flex align-items-center">
+                                        <span class="d-inline-blcok font-size-small">Annually</span>
+                                        <span class="d-inline-block mx-3 toggle-icon position-relative right"></span>
+                                        <span class="d-inline-blcok font-size-small price-act">One-Time Price</span>
+                                    </div>
+                                    <!-- Annually -->
+                                    <div class="pt-4 annually" style="display: none;">
+                                        <div><span class="font-size-super font-weight-bold">$29.99</span><span class="font-size-small ml-2" style="text-decoration: line-through;">$59.99</span></div>
+                                        <div class="py-3">
+                                            <a href="#" class="btn btn-action m-0 mr-xl-3 mb-xl-0" ga360location="content_1_buttonLink_134">
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <div>TRY IT FREE</div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="btn btn-outline-action  m-0" ga360location="content_1_buttonLink_135">BUY NOW</a>
+                                        </div>
+                                    </div>
+
+                                    <!--one Time Price -->
+                                    <div class="pt-4 timeprice" style="">
+                                        <div><span class="font-size-super font-weight-bold">$39.99</span><span class="font-size-small ml-2" style="text-decoration: line-through;">$79.99</span></div>
+                                        <div class="py-3">
+                                            <a href="#" class="btn btn-action m-0 mr-xl-3 mb-xl-0" ga360location="content_1_buttonLink_136">
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <div>TRY IT FREE</div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="btn btn-outline-action  m-0" ga360location="content_1_buttonLink_137">BUY NOW</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-md-6 pt-3">
+                            <div class=" px-lg-5 px-3" style="border: 1px solid #DFDFDF; border-radius: 10px;">
+                                <div class="price-box py-lg-5 py-3">
+                                    <div class="font-size-super font-weight-bold">Document Cloud</div>
+                                    <p class="font-size-normal py-lg-3 py-2 my-0">Collaborate on work, on the web. Easy Cloud-based Document Management.</p>
+                                    <div class="py-2 d-flex align-items-center">
+                                        <span class="d-inline-blcok font-size-small price-act">Annually</span>
+                                        <span class="d-inline-block mx-3 toggle-icon position-relative"></span>
+                                        <span class="d-inline-blcok font-size-small">One-Time Price</span>
+                                    </div>
+                                    <!-- Semiannually -->
+                                    <div class="pt-4 annually">
+                                        <div><span class="font-size-super font-weight-bold">$19.99</span><span class="font-size-small ml-2" style="text-decoration: line-through;">$39.99</span></div>
+                                        <div class="py-3">
+                                            <a href="#" class="btn btn-action m-0 mr-xl-3 mb-xl-0" ga360location="content_1_buttonLink_138">
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <div>TRY IT FREE</div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="btn btn-outline-action  m-0" ga360location="content_1_buttonLink_139">BUY NOW</a>
+                                        </div>
+                                    </div>
+
+                                    <!--Annually -->
+                                    <div class="pt-4 timeprice" style="display: none;">
+                                        <div><span class="font-size-super font-weight-bold">$29.99</span><span class="font-size-small ml-2" style="text-decoration: line-through;">$59.99</span></div>
+                                        <div class="py-3">
+                                            <a href="" class="btn btn-action m-0 mr-xl-3 mb-xl-0" ga360location="content_1_buttonLink_140">
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <div>TRY IT FREE</div>
+                                                </div>
+                                            </a>
+
+                                            <a href="" class="btn btn-outline-action  m-0" ga360location="content_1_buttonLink_141">BUY NOW</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center py-4 font-size-large font-weight-bold">Team licenses available. <a href="" style="color: #005BF7;text-decoration: underline;" ga360location="content_1_buttonLink_142">Learn more</a></div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="https://neveragain.allstatics.com/2019/assets/vendor/wsc-vendor.js"></script>
+<script src="https://neveragain.allstatics.com/2019/assets/script/wsc-override-op.js"></script>
+<script src="https://neveragain.allstatics.com/2019/assets/script/wsc-common.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+<script>
+    $(function() {
+        wsc.common.init()
+    })
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        loop: true
+    });
+    //
+    $(function() {
+            //toggle模板
+            $('.toggle-icon').on('click', function() {
+                if ($(this).hasClass('right')) {
+                    $(this).removeClass('right');
+                    $(this).prev().addClass('price-act');
+                    $(this).next().removeClass('price-act');
+                    $(this).parents('.price-box').find('.annually').show();
+                    $(this).parents('.price-box').find('.timeprice').hide();
+                } else {
+                    $(this).addClass('right');
+                    $(this).next().addClass('price-act')
+                    $(this).prev().removeClass('price-act');
+                    $(this).parents('.price-box').find('.annually').hide();
+                    $(this).parents('.price-box').find('.timeprice').show();
+                }
+            })
+            var offsetHeight = $('.pdf-plan').offset().top;
+            $('.buy-action').on('click', function() {
+                $('body,html').animate({
+                    scrollTop: offsetHeight
+                }, 300)
+            })
+        })
+        //鼠标滑动事件
+    var frame1 = document.querySelector("#frame-1")
+    var frame2 = document.querySelector("#frame-2")
+
+    frame1.onmouseenter = function() {
+        frame1.style.opacity = 0.2;
+        setTimeout(() => {
+            frame1.style.opacity = 1
+            frame1.src = "./img/Frame-1.png"
+        }, 600)
+    }
+    frame1.onmouseleave = function() {
+        frame1.style.opacity = 0.2;
+        setTimeout(() => {
+            frame1.style.opacity = 1
+            frame1.src = "./img/Frame-11.png"
+        }, 600)
+    }
+    frame2.onmouseenter = function() {
+        frame2.style.opacity = 0.2;
+        setTimeout(() => {
+            frame2.style.opacity = 1
+            frame2.src = "./img/Frame-2.png"
+        }, 600)
+    }
+    frame2.onmouseleave = function() {
+        frame2.style.opacity = 0.2;
+        setTimeout(() => {
+            frame2.style.opacity = 1
+            frame2.src = "./img/Frame-21.png"
+        }, 600)
+    }
+</script>
+
+</html>
