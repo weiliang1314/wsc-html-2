@@ -110,7 +110,7 @@
         
         .redace-img {
             opacity: 0;
-            animation: redace-img 1s linear 1;
+            animation: redace-img 2s linear .5s 1;
         }
         
         @keyframes redace-img {
@@ -804,7 +804,7 @@
         frame1.src = "./img/Frame-1.png"
         setTimeout(() => {
             frame1.classList.remove("redace-img")
-        }, 500)
+        }, 1000)
 
     }
     frame1.onmouseleave = function() {
@@ -812,7 +812,7 @@
         frame1.src = "./img/Frame-11.png"
         setTimeout(() => {
             frame1.classList.remove("redace-img")
-        }, 500)
+        }, 1000)
     }
 
     frame2.onmouseenter = function() {
@@ -820,7 +820,7 @@
         frame2.src = "./img/Frame-2.png"
         setTimeout(() => {
             frame2.classList.remove("redace-img")
-        }, 500)
+        }, 1000)
 
     }
     frame2.onmouseleave = function() {
@@ -829,7 +829,7 @@
             frame2.src = "./img/Frame-21.png"
             setTimeout(() => {
                 frame2.classList.remove("redace-img")
-            }, 500)
+            }, 1000)
 
         }
         //页面滚动出现缩放
