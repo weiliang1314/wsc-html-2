@@ -107,6 +107,32 @@
         .price-box {
             min-height: 26.5rem;
         }
+        
+        .redace-img {
+            opacity: 0;
+            animation: redace-img 1s linear 1;
+        }
+        
+        @keyframes redace-img {
+            0% {
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.1;
+            }
+            30% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
         /*页面滚动出现缩放*/
         
         .scroll-fade-in {
@@ -747,23 +773,36 @@
 
     frame1.onmouseenter = function() {
 
+        frame1.classList.add("redace-img")
         frame1.src = "./img/Frame-1.png"
+        setTimeout(() => {
+            frame1.classList.remove("redace-img")
+        }, 500)
 
     }
     frame1.onmouseleave = function() {
-
+        frame1.classList.add("redace-img")
         frame1.src = "./img/Frame-11.png"
-
+        setTimeout(() => {
+            frame1.classList.remove("redace-img")
+        }, 500)
     }
-    frame2.onmouseenter = function() {
 
+    frame2.onmouseenter = function() {
+        frame2.classList.add("redace-img")
         frame2.src = "./img/Frame-2.png"
+        setTimeout(() => {
+            frame2.classList.remove("redace-img")
+        }, 500)
 
     }
     frame2.onmouseleave = function() {
 
-
+            frame2.classList.add("redace-img")
             frame2.src = "./img/Frame-21.png"
+            setTimeout(() => {
+                frame2.classList.remove("redace-img")
+            }, 500)
 
         }
         //页面滚动出现缩放
