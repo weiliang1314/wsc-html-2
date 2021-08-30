@@ -108,9 +108,17 @@
             min-height: 26.5rem;
         }
         
-        .redace-img {
+        .redace-img:hover {
             opacity: 0;
-            animation: redace-img 2s linear .5s 1;
+            transition: .6s;
+        }
+        
+        .redace-img {
+            transition: .6s;
+        }
+        /*  .redace-img {
+            opacity: 0;
+            animation: redace-img 3s linear .5s 1;
         }
         
         @keyframes redace-img {
@@ -124,7 +132,13 @@
                 opacity: 0.5;
             }
             50% {
+                opacity: 0.7;
+            }
+            60% {
                 opacity: 0.8;
+            }
+            80% {
+                opacity: 0.9;
             }
             90% {
                 opacity: 1;
@@ -132,7 +146,7 @@
             100% {
                 opacity: 0;
             }
-        }
+        } */
         /*页面滚动出现缩放*/
         
         .scroll-fade-in {
@@ -372,7 +386,10 @@
                         <div class="row d-flex justify-content-center pt-md-5 pt-0 mt-4 ">
                             <div class=" col-md-5 pt-5 pt-md-0">
                                 <div class="freedom-rowBox">
-                                    <img src="./img/Frame-11.png" alt="" class="img-fluid " id="frame-1">
+                                    <div class="position-relative">
+                                        <img src="./img/Frame-11.png" alt="" class="img-fluid position-absolute redace-img" id="frame-1">
+                                        <img src="./img/Frame-1.png" alt="" class="img-fluid">
+                                    </div>
                                     <div class="mt-md-5 text-center text-md-left mt-3">
                                         <div class="display-4 font-weight-bold mt-md-4 mt-0 pdfelement-name">Redact Text</div>
                                         <p class="font-size-large mt-3 width-per pb-md-3 pb-0">
@@ -393,7 +410,10 @@
                             </div>
                             <div class=" col-md-5 pl-md-5 ml-md-5 mt-md-0  mt-5 pt-5 pt-md-0">
                                 <div class="freedom-rowBox">
-                                    <img src="./img/Frame-21.png" alt="" class="img-fluid" id="frame-2">
+                                    <div class="position-relative">
+                                        <img src="./img/Frame-21.png" alt="" class="img-fluid position-absolute redace-img" id="frame-2">
+                                        <img src="./img/Frame-2.png" alt="" class="img-fluid">
+                                    </div>
                                 </div>
                                 <div class=" mt-md-5 mt-3 text-center text-md-left">
                                     <div class="display-4 font-weight-bold mt-md-4 mt-0 pdfelement-name">Redact Image</div>
@@ -795,43 +815,43 @@
             })
         })
         //鼠标滑动事件出现黑色块
-    var frame1 = document.querySelector("#frame-1")
-    var frame2 = document.querySelector("#frame-2")
+        /*  var frame1 = document.querySelector("#frame-1")
+         var frame2 = document.querySelector("#frame-2")
 
-    frame1.onmouseenter = function() {
+         frame1.onmouseenter = function() {
 
-        frame1.classList.add("redace-img")
-        frame1.src = "./img/Frame-1.png"
-        setTimeout(() => {
-            frame1.classList.remove("redace-img")
-        }, 1000)
+             frame1.classList.add("redace-img")
+             frame1.src = "./img/Frame-1.png"
+             setTimeout(() => {
+                 frame1.classList.remove("redace-img")
+             }, 2000)
 
-    }
-    frame1.onmouseleave = function() {
-        frame1.classList.add("redace-img")
-        frame1.src = "./img/Frame-11.png"
-        setTimeout(() => {
-            frame1.classList.remove("redace-img")
-        }, 1000)
-    }
+         }
+         frame1.onmouseleave = function() {
+             frame1.classList.add("redace-img")
+             frame1.src = "./img/Frame-11.png"
+             setTimeout(() => {
+                 frame1.classList.remove("redace-img")
+             }, 2000)
+         }
 
-    frame2.onmouseenter = function() {
-        frame2.classList.add("redace-img")
-        frame2.src = "./img/Frame-2.png"
-        setTimeout(() => {
-            frame2.classList.remove("redace-img")
-        }, 1000)
+         frame2.onmouseenter = function() {
+             frame2.classList.add("redace-img")
+             frame2.src = "./img/Frame-2.png"
+             setTimeout(() => {
+                 frame2.classList.remove("redace-img")
+             }, 2000)
 
-    }
-    frame2.onmouseleave = function() {
+         }
+         frame2.onmouseleave = function() {
 
-            frame2.classList.add("redace-img")
-            frame2.src = "./img/Frame-21.png"
-            setTimeout(() => {
-                frame2.classList.remove("redace-img")
-            }, 1000)
+                 frame2.classList.add("redace-img")
+                 frame2.src = "./img/Frame-21.png"
+                 setTimeout(() => {
+                     frame2.classList.remove("redace-img")
+                 }, 2000)
 
-        }
+             } */
         //页面滚动出现缩放
     $(function() {
 
