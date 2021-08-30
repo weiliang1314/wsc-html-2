@@ -238,6 +238,15 @@
             .pc-img {
                 margin-top: 8.75rem;
             }
+            .mx-64 {
+                margin: 0 2.9375rem;
+            }
+            .sign-text {
+                margin-top: 3rem;
+            }
+            .redace-text {
+                margin-top: 2rem;
+            }
         }
         
         @media (max-width:769px) {
@@ -269,12 +278,18 @@
             .pc-img {
                 margin-top: 0;
             }
+            .sign-text {
+                margin-top: 0rem;
+            }
+            .redace-text {
+                margin-top: 0rem;
+            }
         }
     </style>
 
 </head>
 
-<body>
+<body data-pro="pdfelement" data-cat="template" data-nav="basic" data-sys="auto" data-dev="auto">
     <main class="wsc-main px-0" style="overflow: visible;">
         <section class="" style="font-family: DM Sans; color: #000000;">
             <div class="container">
@@ -296,13 +311,20 @@
                                     </div>
                                 </a>
                                 <a href="#" class="btn btn-lg btn-outline-action sys-win m-0 py-3 px-lg-5 px-4 buy-action">BUY NOW</a>
-
+                                <a href="#" class="btn  px-4 py-3 btn-lg btn-action sys-mac m-0 mr-xl-3 mr-2 mb-xl-0">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="wsc-icon" data-icon="brand-windows"></i>
+                                        <div class="ml-2">TRY IT FREE</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="btn btn-lg btn-outline-action sys-mac m-0 py-3 px-lg-5 px-4 buy-action">BUY NOW</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xxl-7 order-md-1 order-0 col-md-6">
-                        <div class="dev-mobile pdfelement-banner ">
-                            <img src="./img/pc-1.png" alt="" class=" pc-img " width="100%">
+                        <div class="dev-desktop pdfelement-banner position-relative">
+                            <img src="./img/pc-1.png" alt="" class="pc-img sys-mac" width="100%">
+                            <img src="./img/pc-1.png" alt="" class="pc-img sys-win" width="100%">
 
                         </div>
                     </div>
@@ -356,6 +378,9 @@
                         <div class="sys-win pt-2 pb-3 pb-md-5 font-size-large font-weight-bold" style="color: #0049FF;"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_10" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
                                 ga360location="content_1_buttonLink_11">Learn How</a>
                         </div>
+                        <div class="sys-mac pt-2 pb-3 pb-md-5 font-size-large font-weight-bold" style="color: #0049FF;"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_10" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
+                                ga360location="content_1_buttonLink_11">Learn How</a>
+                        </div>
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
@@ -367,15 +392,15 @@
             </div>
         </section>
         <section class="mx-64 mt-5" style="background: linear-gradient(0deg, rgba(0, 109, 255, 0.15) 0%, rgba(255, 231, 130, 0.0645) 104.95%);  border-radius: 16px;color: #000000;">
-            <div class="container-clumn px-md-5 px-0 freedom-box mt-4">
+            <div class="container-clumn px-md-4 px-xl-5 px-0 freedom-box mt-4">
                 <div class="pdf-freedom border-radius mx-2  py-5">
                     <div class="freedom-conent py-0 py-lg-5">
                         <div class="row justify-content-center px-3 px-lg-0">
-                            <div class="col-md-5 text-center text-md-left">
+                            <div class="col-md-5 text-center text-md-left redace-text">
                                 <h3 class="display-3 font-weight-bold pdfelement-name" id="redac">Redact<br class="d-lg-block d-none"> PDF to Protect</h3>
                             </div>
-                            <div class="col-xl-5 col-md-7 px-md-4 px-3 text-md-left text-center">
-                                <p class="font-size-large font-weight-normal mb-3 px-lg-4 px-0">
+                            <div class="col-xl-5 col-md-7 px-xl-4 px-3 text-md-left text-center">
+                                <p class="font-size-large font-weight-normal mb-3 px-xl-4 px-0">
                                     Before you share a PDF, you probably want to examine the document for sensitive content or private information that can trace the document to you. Use the Redact tools to remove or redact sensitive images and text or entire pages that are visible in a
                                     PDF.
                                 </p>
@@ -384,31 +409,35 @@
                         </div>
 
                         <div class="row d-flex justify-content-center pt-md-5 pt-0 mt-4 ">
-                            <div class=" col-md-5 pt-5 pt-md-0">
+                            <div class="col-md-6 col-xl-5 pt-3 pt-md-0">
                                 <div class="freedom-rowBox">
                                     <div class="position-relative">
                                         <img src="./img/Frame-11.png" alt="" class="img-fluid position-absolute redace-img" id="frame-1">
                                         <img src="./img/Frame-1.png" alt="" class="img-fluid">
                                     </div>
-                                    <div class="mt-md-5 text-center text-md-left mt-3">
-                                        <div class="display-4 font-weight-bold mt-md-4 mt-0 pdfelement-name">Redact Text</div>
-                                        <p class="font-size-large mt-3 width-per pb-md-3 pb-0">
-                                            Protect your sensitive information or private information<br class="d-xxl-block d-none"> such as Financial account numbers, ID Card numbers,<br class="d-xxl-block d-none">Home addresses or Private Phone Numbers
-                                            that can trace<br class="d-xxl-block d-none"> the document to you when you share PDFs.</p>
-                                        <!-- pc端 -->
-                                        <div class="pt-md-3 pt-3 text-action font-weight-bold dev-desktop text-md-left text-center">
-                                            <!-- window -->
-                                            <div class="sys-win"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_10" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
-                                                    ga360location="content_1_buttonLink_11">Learn How</a>
-                                            </div>
-                                            <!-- mac -->
-
+                                </div>
+                                <div class="mt-md-5 text-center text-md-left mt-3">
+                                    <div class="display-4 font-weight-bold mt-md-4 mt-0 pdfelement-name">Redact Text</div>
+                                    <p class="font-size-large mt-3 width-per pb-md-3 pb-0">
+                                        Protect your sensitive information or private information<br class="d-xxl-block d-none"> such as Financial account numbers, ID Card numbers,<br class="d-xxl-block d-none">Home addresses or Private Phone Numbers
+                                        that can trace<br class="d-xxl-block d-none"> the document to you when you share PDFs.</p>
+                                    <!-- pc端 -->
+                                    <div class="pt-md-3  text-action font-weight-bold dev-desktop text-md-left text-center">
+                                        <!-- window -->
+                                        <div class="sys-win"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_10" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
+                                                ga360location="content_1_buttonLink_11">Learn How</a>
+                                        </div>
+                                        <!-- mac -->
+                                        <div class="sys-mac"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_10" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
+                                                ga360location="content_1_buttonLink_11">Learn How</a>
                                         </div>
 
                                     </div>
+
                                 </div>
                             </div>
-                            <div class=" col-md-5 pl-md-5 ml-md-5 mt-md-0  mt-5 pt-5 pt-md-0">
+
+                            <div class=" col-xl-5 col-md-6 pl-md-5 ml-xl-5 mt-md-0  mt-5 pt-2 pt-md-0">
                                 <div class="freedom-rowBox">
                                     <div class="position-relative">
                                         <img src="./img/Frame-21.png" alt="" class="img-fluid position-absolute redace-img" id="frame-2">
@@ -419,12 +448,15 @@
                                     <div class="display-4 font-weight-bold mt-md-4 mt-0 pdfelement-name">Redact Image</div>
                                     <p class="font-size-large mt-3 width-per pb-md-3 pb-0">Black out personal and sensitive information on pdf <br class="d-xxl-block d-none">like images, graphics, pictures on your trade report, <br class="d-xxl-block d-none">ressume before publish in media.</p>
                                     <!-- pc端 -->
-                                    <div class=" pt-3 text-action font-weight-bold dev-desktop ">
+                                    <div class=" pt-md-3 text-action font-weight-bold dev-desktop ">
                                         <!-- window -->
                                         <div class="sys-win"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_18" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
                                                 ga360location="content_1_buttonLink_19">Learn How</a>
                                         </div>
                                         <!-- mac -->
+                                        <div class="sys-mac"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_18" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
+                                                ga360location="content_1_buttonLink_19">Learn How</a>
+                                        </div>
 
                                     </div>
 
@@ -432,48 +464,58 @@
                             </div>
                         </div>
 
-                        <div class="row d-flex justify-content-center pt-md-5 pt-0 mt-md-4 mt-5">
-                            <div class=" col-md-5 pt-5 pt-md-0">
+                        <div class="row d-flex justify-content-center pt-md-5 pt-0  mt-4">
+                            <div class=" col-xl-5 col-md-6 pt-3 pt-md-0">
                                 <div class="freedom-rowBox">
                                     <img src="./img/Frame-3.png" alt="" class="img-fluid">
-                                    <div class="mt-md-5 mt-3 text-center text-md-left">
-                                        <div class="display-4 font-weight-bold mt-md-4 mt-0 pdfelement-name">Black out Entire Page(s)</div>
-                                        <p class="font-size-large mt-3 width-per pb-md-3 pb-0">
-                                            You may also want to redact or remove entire<br class="d-xxl-block d-none"> pages that show the product purchase price,<br class="d-xxl-block d-none"> loan history of your company.</p>
-                                        <!-- pc端 -->
-                                        <div class="pt-md-3 pt-3 text-action font-weight-bold dev-desktop">
-                                            <!-- window -->
-                                            <div class="sys-win"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_10" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
-                                                    ga360location="content_1_buttonLink_11">Learn How</a>
-                                            </div>
-                                            <!-- mac -->
+                                </div>
+                                <div class="mt-md-5 mt-3 text-center text-md-left">
+                                    <div class="display-4 font-weight-bold mt-md-4 mt-0 pdfelement-name">Black out Entire Page(s)</div>
+                                    <p class="font-size-large mt-3 width-per pb-md-3 pb-0">
+                                        You may also want to redact or remove entire<br class="d-xxl-block d-none"> pages that show the product purchase price,<br class="d-xxl-block d-none"> loan history of your company.</p>
+                                    <!-- pc端 -->
+                                    <div class="pt-md-3  text-action font-weight-bold dev-desktop">
+                                        <!-- window -->
+                                        <div class="sys-win"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_10" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
+                                                ga360location="content_1_buttonLink_11">Learn How</a>
+                                        </div>
+                                        <!-- mac -->
+                                        <div class="sys-mac"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_18" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
+                                                ga360location="content_1_buttonLink_19">Learn How</a>
 
                                         </div>
 
                                     </div>
                                 </div>
+
                             </div>
-                            <div class="col-md-5 pl-md-5 ml-md-5 mt-md-0 mt-5 pt-5 pt-md-0">
+                            <div class="col-xl-5 col-md-6  pl-md-5 ml-xl-5 mt-md-0 mt-5 pt-2 pt-md-0">
                                 <div class="freedom-rowBox">
                                     <img src="./img/Frame-4.png" alt="" class="img-fluid">
                                 </div>
+
                                 <div class=" mt-md-5 text-md-left text-center">
                                     <div class="display-4 font-weight-bold mt-md-4 mt-0 pdfelement-name">Create Multiple<br class="d-md-block d-none"> Redactions with Search</div>
                                     <p class="font-size-large mt-3 width-per pb-md-3 pb-0">Use the Search & Redact tool to find and mark<br class="d-xxl-block d-none"> all words for redaction. The search tool doesn’t <br class="d-xxl-block d-none">search secured (encrypted) PDFs.</p>
                                     <!-- pc端 -->
-                                    <div class=" pt-3 text-action font-weight-bold dev-desktop">
+                                    <div class=" pt-md-3 text-action font-weight-bold dev-desktop">
                                         <!-- window -->
                                         <div class="sys-win"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_18" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
                                                 ga360location="content_1_buttonLink_19">Learn How</a>
                                         </div>
                                         <!-- mac -->
+                                        <div class="sys-mac"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_18" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
+                                                ga360location="content_1_buttonLink_19">Learn How</a>
+
+                                        </div>
 
                                     </div>
-
                                 </div>
-                            </div>
-                        </div>
 
+                            </div>
+
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -482,7 +524,7 @@
             <div class="mx-2 py-xl-3 py-xl-5 pb-md-4 pb-0 py-md-0 py-5" style="">
                 <div class="container py-0 py-md-5 px-xl-0 px-md-3">
                     <div class="row scroll-fade-in justify-content-between pb-3 px-3 px-lg-0" style="--opacity:1; --translate-y:0;">
-                        <div class="col-xl-5  col-md-6 pl-md-5 text-md-left text-center">
+                        <div class="col-xl-5  col-md-6 pl-md-5 text-md-left text-center sign-text">
                             <h2 class="font-weight-bold display-3 pdfelement-name" id="sign">Sign to<br> Protect a PDF.</h2>
                         </div>
                         <div class=" col-md-6 px-md-5 px-3 mt-md-0 mt-3 text-md-left text-center">
@@ -493,7 +535,8 @@
                     <div class="row scroll-fade-in px-md-0 px-3 justify-content-between mt-lg-5 mt-md-3   pt-md-5 pt-2" style="--opacity:1; --translate-y:0;">
                         <div class=" col-md-6 d-flex align-items-center text-center">
                             <!-- window端 -->
-                            <img src="./img/Frame-5.png" class="scroll-fade-in-img img-fluid " alt="" style="--opacity:1; --translate-y:0; --scale:0.991645;">
+                            <img src="./img/Frame-5.png" class="scroll-fade-in-img img-fluid sys-mac" alt="" style="--opacity:1; --translate-y:0; --scale:0.991645;">
+                            <img src="./img/Frame-5.png" class="scroll-fade-in-img img-fluid sys-win" alt="" style="--opacity:1; --translate-y:0; --scale:0.991645;">
                         </div>
                         <div class="col-xl-5 col-md-6 mt-4 mt-md-0">
                             <div class="ml-md-5 h-100 w-100" style="display:table;vertical-align:middle">
@@ -509,11 +552,13 @@
                                     <div class="pt-md-3 pt-3 text-action font-weight-bold dev-desktop">
                                         <!-- window -->
                                         <div class="sys-win"><a href="#" class="font-size-large text-action pr-3" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="https://pdf.wondershare.com/how-to/edit-pdf-text.html" class="font-size-large text-action pl-3">Learn How</a></div>
+                                        <div class="sys-mac"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_18" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
+                                                ga360location="content_1_buttonLink_19">Learn How</a>
+                                        </div>
 
                                     </div>
 
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -532,17 +577,21 @@
                                     <div class="pt-md-3 pt-3 text-action font-weight-bold dev-desktop ">
                                         <!-- window -->
                                         <div class="sys-win"><a href="#" class="font-size-large text-action pr-3" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="https://pdf.wondershare.com/how-to/edit-pdf-image.html" class="font-size-large text-action pl-3">Learn How</a></div>
+                                        <div class="sys-mac"><a href="#" class="font-size-large text-action pr-3" ga360location="content_1_buttonLink_18" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">Try Now</a>|<a href="#" class="font-size-large text-action pl-3"
+                                                ga360location="content_1_buttonLink_19">Learn How</a>
+                                        </div>
 
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                         <div class=" order-md-1 order-0 col-md-6 d-flex align-items-center text-left">
                             <!-- windows -->
                             <img src="./img/Frame-6.png" class="scroll-fade-in-img sys-win img-fluid" alt="" style="--opacity:0.405688; --translate-y:29.7156; --scale:0.881138;">
+                            <img src="./img/Frame-6.png" class="scroll-fade-in-img sys-mac img-fluid" alt="" style="--opacity:0.405688; --translate-y:29.7156; --scale:0.881138;">
 
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -558,7 +607,9 @@
                                 <!-- pc端 -->
                                 <div class="feat-link dev-desktop mt-md-5 pt-3">
                                     <!-- Windows -->
-                                    <a href="#" class="font-size-large sys-a">Edit PDFs</a>
+                                    <a href="#" class="font-size-large sys-a sys-mac">Edit PDFs</a>
+                                    <a href="#" class="font-size-large sys-a sys-win">Edit PDFs</a>
+
 
                                 </div>
 
@@ -568,7 +619,9 @@
                                 <!-- pc端 -->
                                 <div class="feat-link dev-desktop mt-md-5 pt-3">
                                     <!-- Windows -->
-                                    <a href="#" class="font-size-large sys-a">Annotate PDFs</a>
+                                    <a href="#" class="font-size-large sys-a sys-win">Annotate PDFs</a>
+                                    <a href="#" class="font-size-large sys-a sys-mac">Annotate PDFs</a>
+
 
                                 </div>
 
@@ -578,7 +631,9 @@
                                 <!-- pc端 -->
                                 <div class="feat-link dev-desktop mt-md-5 pt-3">
                                     <!-- Windows -->
-                                    <a href="#" class="font-size-large sys-a">Convert PDFs</a>
+                                    <a href="#" class="font-size-large sys-a sys-mac">Convert PDFs</a>
+                                    <a href="#" class="font-size-large sys-a sys-win">Convert PDFs</a>
+
 
                                 </div>
 
@@ -588,7 +643,9 @@
                                 <!-- pc端 -->
                                 <div class="feat-link dev-desktop mt-md-5 pt-3">
                                     <!-- Windows -->
-                                    <a href="#" class="font-size-large sys-a">sign</a>
+                                    <a href="#" class="font-size-large sys-a sys-mac">sign</a>
+                                    <a href="#" class="font-size-large sys-a sys-win">sign</a>
+
 
                                 </div>
 
@@ -598,7 +655,9 @@
                                 <!-- pc端 -->
                                 <div class="feat-link dev-desktop mt-md-5 pt-3">
                                     <!-- Windows -->
-                                    <a href="#" class="font-size-large sys-a">OCR</a>
+                                    <a href="#" class="font-size-large sys-a sys-mac">OCR</a>
+                                    <a href="#" class="font-size-large sys-a sys-win">OCR</a>
+
 
                                 </div>
 
@@ -640,7 +699,16 @@
                                                 </div>
                                             </a>
                                             <a href="" class="btn btn-outline-action sys-win m-0" ga360location="content_1_buttonLink_111">BUY NOW</a>
-
+                                            <a href="#" class="btn btn-action btn-1 sys-mac m-0 mr-xl-3 mb-xl-0" ga360location="content_1_buttonLink_110" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <i class="wsc-icon wsc-icon-loaded" data-icon="brand-windows"><svg class="wsc-svg-brand-windows" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0 6.61071L19.6714 3.9V22.9071H0V6.61071ZM0 41.3893L19.6714 44.1V25.3286H0V41.3893V41.3893ZM21.8357 44.3893L48 48V25.3286H21.8357V44.3893V44.3893ZM21.8357 3.61071V22.9071H48V0L21.8357 3.61071V3.61071Z" fill="currentColor"></path>
+                                                            </svg>
+                                                          </i>
+                                                    <div class="ml-2">TRY IT FREE</div>
+                                                </div>
+                                            </a>
+                                            <a href="" class="btn btn-outline-action sys-mac m-0" ga360location="content_1_buttonLink_111">BUY NOW</a>
 
                                         </div>
 
@@ -649,7 +717,8 @@
                                         <div class="pt-1 dev-desktop">
                                             <!-- win -->
                                             <a href="javascript:;" class="font-size-small go-enter sys-win" data-platform="mac" data-toggle="platform">Switch to Mac &gt;&gt;</a>
-
+                                            <!-- mac -->
+                                            <a href="javascript:;" class="font-size-small go-enter sys-mac" data-platform="win" data-toggle="platform">Switch to Windows >></a>
                                         </div>
 
                                     </div>
@@ -671,6 +740,16 @@
                                             </a>
                                             <a href="#" class="btn btn-outline-action sys-win m-0" ga360location="content_1_buttonLink_123">BUY NOW</a>
                                             <!-- mac平台 -->
+                                            <a href="#" class="btn btn-action btn-1 sys-mac m-0 mr-xl-3 mb-xl-0" ga360location="content_1_buttonLink_110" ga360type="prd download" ga360proids="5239" ga360pronames="pdfelementprofull">
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <i class="wsc-icon wsc-icon-loaded" data-icon="brand-windows"><svg class="wsc-svg-brand-windows" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0 6.61071L19.6714 3.9V22.9071H0V6.61071ZM0 41.3893L19.6714 44.1V25.3286H0V41.3893V41.3893ZM21.8357 44.3893L48 48V25.3286H21.8357V44.3893V44.3893ZM21.8357 3.61071V22.9071H48V0L21.8357 3.61071V3.61071Z" fill="currentColor"></path>
+                                                            </svg>
+                                                          </i>
+                                                    <div class="ml-2">TRY IT FREE</div>
+                                                </div>
+                                            </a>
+                                            <a href="" class="btn btn-outline-action sys-mac m-0" ga360location="content_1_buttonLink_111">BUY NOW</a>
 
                                         </div>
                                         <!-- 移动端 -->
@@ -679,6 +758,8 @@
                                         <div class="pt-1 dev-desktop">
                                             <!-- win -->
                                             <a href="javascript:;" class="font-size-small go-enter sys-win" data-platform="mac" data-toggle="platform">switch to mac &gt;&gt;</a>
+                                            <!-- mac -->
+                                            <a href="javascript:;" class="font-size-small go-enter sys-mac" data-platform="win" data-toggle="platform">Switch to Windows >></a>
 
                                         </div>
 
@@ -760,6 +841,7 @@
                                             </a>
 
                                             <a href="" class="btn btn-outline-action  m-0" ga360location="content_1_buttonLink_141">BUY NOW</a>
+
                                         </div>
                                     </div>
                                 </div>
