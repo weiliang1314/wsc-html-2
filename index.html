@@ -108,12 +108,12 @@
             min-height: 26.5rem;
         }
         
-        .redace-img:hover {
+        .redace-img {
             opacity: 0;
             transition: .6s;
         }
         
-        .redace-img {
+        .redace-img-1 {
             transition: .6s;
         }
         /*  .redace-img {
@@ -391,13 +391,13 @@
                 </div>
             </div>
         </section>
-        <section class="mx-64 mt-5" style="background: linear-gradient(0deg, rgba(0, 109, 255, 0.15) 0%, rgba(255, 231, 130, 0.0645) 104.95%);  border-radius: 16px;color: #000000;">
+        <section class="mx-64 mt-5 " id="section-3" style="background: linear-gradient(0deg, rgba(0, 109, 255, 0.15) 0%, rgba(255, 231, 130, 0.0645) 104.95%);  border-radius: 16px;color: #000000;">
             <div class="container-clumn px-md-4 px-xl-5 px-0 freedom-box mt-4">
                 <div class="pdf-freedom border-radius mx-2  py-5">
                     <div class="freedom-conent py-0 py-lg-5">
                         <div class="row justify-content-center px-3 px-lg-0">
                             <div class="col-md-5 text-center text-md-left redace-text">
-                                <h3 class="display-3 font-weight-bold pdfelement-name" id="redac">Redact<br class="d-lg-block d-none"> PDF to Protect</h3>
+                                <h3 class="display-3 font-weight-bold pdfelement-name" id="redac" style="">Redact<br class="d-lg-block d-none"> PDF to Protect</h3>
                             </div>
                             <div class="col-xl-5 col-md-7 px-xl-4 px-3 text-md-left text-center">
                                 <p class="font-size-large font-weight-normal mb-3 px-xl-4 px-0">
@@ -412,8 +412,8 @@
                             <div class="col-md-6 col-xl-5 pt-3 pt-md-0">
                                 <div class="freedom-rowBox">
                                     <div class="position-relative">
-                                        <img src="./img/Frame-11.png" alt="" class="img-fluid position-absolute redace-img" id="frame-1">
-                                        <img src="./img/Frame-1.png" alt="" class="img-fluid">
+                                        <img src="./img/Frame-11.png" alt="" class="img-fluid position-absolute  " id="frame-1">
+                                        <img src="./img/Frame-1.png" alt="" class="img-fluid ">
                                     </div>
                                 </div>
                                 <div class="mt-md-5 text-center text-md-left mt-3">
@@ -934,6 +934,25 @@
                  }, 2000)
 
              } */
+        //鼠标滚动事件
+    var frame1 = document.querySelector("#frame-1");
+    var frame2 = document.querySelector("#frame-2");
+    var redac = document.querySelector("#section-3");
+    var redactop = setInterval(() => {
+        return redac.offsetTop;
+
+    }, 1000);
+    console.log(redactop)
+    window.onscroll = function() {
+            var scroll = document.documentElement.scrollTop;
+
+            if (scroll > redactop - 300) {
+                frame1.classList.add("redace-img")
+            } else {
+                frame1.classList.remove("redace-img")
+                frame1.classList.add("redace-img-1")
+            }
+        }
         //页面滚动出现缩放
     $(function() {
 
